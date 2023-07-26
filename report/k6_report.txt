@@ -1,0 +1,80 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\igor.ramos> cd C:\Users\igor.ramos\Downloads\
+PS C:\Users\igor.ramos\Downloads> k6 run .\load_test.js
+
+          /\      |‾‾| /‾‾/   /‾‾/
+     /\  /  \     |  |/  /   /  /
+    /  \/    \    |     (   /   ‾‾\
+   /          \   |  |\  \ |  (‾)  |
+  / __________ \  |__| \__\ \_____/ .io
+
+WARN[0000] There were unknown fields in the options exported in the script  error="json: unknown field \"insercureSkipTLSVerify\""
+  execution: local
+     script: .\load_test.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 40 max VUs, 38m30s max duration (incl. graceful stop):
+           * default: Up to 40 looping VUs for 38m0s over 9 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+     data_received..................: 142 MB 62 kB/s
+     data_sent......................: 4.7 MB 2.1 kB/s
+     http_req_blocked...............: avg=33.22µs  min=0s       med=0s      max=14.59ms  p(90)=0s      p(95)=0s
+     http_req_connecting............: avg=12.32µs  min=0s       med=0s      max=7.91ms   p(90)=0s      p(95)=0s
+     http_req_duration..............: avg=6.21s    min=125.48ms med=5.57s   max=37.46s   p(90)=11.84s  p(95)=14.33s
+       { expected_response:true }...: avg=6.21s    min=125.48ms med=5.57s   max=37.46s   p(90)=11.84s  p(95)=14.33s
+     http_req_failed................: 0.00%  ✓ 0         ✗ 25980
+     http_req_receiving.............: avg=295.49µs min=0s       med=116.2µs max=105.85ms p(90)=810.6µs p(95)=999.8µs
+     http_req_sending...............: avg=26.96µs  min=0s       med=0s      max=10.57ms  p(90)=0s      p(95)=22.3µs
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s      max=0s       p(90)=0s      p(95)=0s
+     http_req_waiting...............: avg=6.21s    min=124.48ms med=5.57s   max=37.46s   p(90)=11.84s  p(95)=14.33s
+     http_reqs......................: 25980  11.392423/s
+     iteration_duration.............: avg=9.98s    min=1.28s    med=9.54s   max=38.46s   p(90)=17.53s  p(95)=20.04s
+     iterations.....................: 5196   2.278485/s
+     vus............................: 1      min=1       max=40
+     vus_max........................: 40     min=40      max=40
+
+
+running (38m00.5s), 00/40 VUs, 5196 complete and 0 interrupted iterations
+default ✓ [======================================] 00/40 VUs  38m0s
+PS C:\Users\igor.ramos\Downloads> k6 run .\load_test_reactive.js
+
+          /\      |‾‾| /‾‾/   /‾‾/
+     /\  /  \     |  |/  /   /  /
+    /  \/    \    |     (   /   ‾‾\
+   /          \   |  |\  \ |  (‾)  |
+  / __________ \  |__| \__\ \_____/ .io
+
+WARN[0000] There were unknown fields in the options exported in the script  error="json: unknown field \"insercureSkipTLSVerify\""
+  execution: local
+     script: .\load_test_reactive.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 40 max VUs, 38m30s max duration (incl. graceful stop):
+           * default: Up to 40 looping VUs for 38m0s over 9 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+     data_received..................: 148 MB 65 kB/s
+     data_sent......................: 5.1 MB 2.2 kB/s
+     http_req_blocked...............: avg=26.82µs  min=0s       med=0s    max=14.74ms  p(90)=0s       p(95)=0s
+     http_req_connecting............: avg=9.54µs   min=0s       med=0s    max=14.36ms  p(90)=0s       p(95)=0s
+     http_req_duration..............: avg=4.55s    min=120.72ms med=3.23s max=43.07s   p(90)=10.51s   p(95)=13.31s
+       { expected_response:true }...: avg=4.55s    min=120.72ms med=3.23s max=43.07s   p(90)=10.51s   p(95)=13.31s
+     http_req_failed................: 0.00%  ✓ 0         ✗ 27010
+     http_req_receiving.............: avg=285.98µs min=0s       med=0s    max=161.52ms p(90)=902.53µs p(95)=1ms
+     http_req_sending...............: avg=25.23µs  min=0s       med=0s    max=7.9ms    p(90)=0s       p(95)=13.2µs
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s    max=0s       p(90)=0s       p(95)=0s
+     http_req_waiting...............: avg=4.55s    min=120.72ms med=3.23s max=43.07s   p(90)=10.51s   p(95)=13.31s
+     http_reqs......................: 27010  11.842762/s
+     iteration_duration.............: avg=9.61s    min=1.28s    med=8.71s max=44.07s   p(90)=17.33s   p(95)=20.1s
+     iterations.....................: 5401   2.368114/s
+     vus............................: 1      min=1       max=40
+     vus_max........................: 40     min=40      max=40
+
+
+running (38m00.7s), 00/40 VUs, 5401 complete and 1 interrupted iterations
+default ✓ [======================================] 00/40 VUs  38m0s
